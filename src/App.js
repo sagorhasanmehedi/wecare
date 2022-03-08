@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Mainpage from "./Page/Mainpage/Mainpage/Mainpage";
+import Navigation from "./Page/Shared/Navigation/Navigation";
+import Sidebar from "./Page/Sidebar/Sidebar";
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container sx={{ paddingTop: "100px" }}>
+        <Navigation />
+      </Container>
     </div>
   );
 }
