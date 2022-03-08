@@ -1,0 +1,61 @@
+.side_bar {
+  width: 200px;
+  height: 600px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px 25px;
+}
+.name_image {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background-color: #fff;
+  padding-bottom: 13px;
+  padding-top: 2px;
+  border-bottom: 2px solid #ebf2f7;
+}
+
+.doctor_image {
+  width: 50px;
+  border-radius: 50px;
+}
+.doctor_name {
+  font-size: 15px;
+  font-weight: 700;
+}
+.sidedar_menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 12px;
+}
+.sidedar_text,
+.retrun_button_text {
+  font-size: 15px;
+  color: #52575d;
+  cursor: pointer;
+
+  font-weight: 600;
+}
+.sidebar_icon {
+  color: #d0dbe5;
+}
+.list_details {
+  font-size: 15px;
+  color: #52575d;
+  font-weight: 600;
+  margin-left: 40px;
+  margin-top: 6px;
+}
+.menu_last {
+  color: #508ff4;
+  cursor: pointer;
+}
+.retrun_button {
+  border-top: 2px solid #ebf2f7;
+  margin-top: 255px;
+  padding-top: 3px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}

@@ -1,0 +1,57 @@
+.clinic_location {
+  border-top: 2px solid #ebf2f7;
+  margin-top: 65px;
+}
+.clinic_location_subtitle {
+  margin: 27px 0;
+  font-size: 15px;
+  color: #52575d;
+  font-weight: 600;
+}
+.input_line {
+  display: flex;
+  gap: 23px;
+}
+.clinic_info {
+  margin: 20px 0 18px 0;
+  font-size: 15px;
+  color: #52575d;
+  font-weight: 600;
+}
+.clinic_input {
+  border: none;
+  background-color: #eeeeee;
+  height: 30px;
+  outline: none;
+  padding-left: 10px;
+  border-radius: 1px;
+  margin-bottom: 4px;
+}
+.name_input_width {
+  width: 220px;
+}
+.zip_input_width {
+  width: 100px;
+}
+.city_input_width {
+  width: 145px;
+}
+.clinic_fiture {
+  display: flex;
+  gap: 41px;
+  align-items: center;
+}
+.form-check-input {
+  margin-right: 13px;
+}
+.form-check-label {
+  font-size: 15px;
+  color: #52575d;
+  font-weight: 600;
+}
+.clinic_checkbox {
+  margin: 27px 0;
+  font-size: 15px;
+  color: #52575d;
+  font-weight: 600;
+}

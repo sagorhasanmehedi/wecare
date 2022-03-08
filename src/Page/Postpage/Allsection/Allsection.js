@@ -2,10 +2,11 @@ import React from "react";
 import About from "../About/About";
 import Cliniclocation from "../Cliniclocation/Cliniclocation";
 import Gallery from "../Gallery/Gallery";
+import "./Allsection.css";
 
-const Mainpage = () => {
+const Allsection = () => {
   return (
-    <div>
+    <div className="all_section">
       <Gallery />
       <Cliniclocation />
       <About />
@@ -13,4 +14,4 @@ const Mainpage = () => {
   );
 };
 
-export default Mainpage;
+export default Allsection;

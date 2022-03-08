@@ -1,15 +1,22 @@
 import "./App.css";
-import Mainpage from "./Page/Mainpage/Mainpage/Mainpage";
+
 import Navigation from "./Page/Shared/Navigation/Navigation";
-import Sidebar from "./Page/Sidebar/Sidebar";
 import Container from "@mui/material/Container";
-import Box from "@mui/material/Box";
+import Postpage from "./Page/Postpage/Postpage/Postpage";
+import Getpage from "./Page/Getpage/Getpage/Getpage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <Container sx={{ paddingTop: "100px" }}>
         <Navigation />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Postpage />} />
+            <Route path="/getpage" element={<Getpage />} />
+          </Routes>
+        </BrowserRouter>
       </Container>
     </div>
   );
