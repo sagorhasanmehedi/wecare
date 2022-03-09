@@ -1,0 +1,163 @@
+/* main page style */
+.all_section {
+  width: 764px;
+  height: 1500px;
+  background-color: #fff;
+  padding: 70px 50px;
+}
+
+/* gallery section style */
+.gallery {
+  border-top: 2px solid #ebf2f7;
+}
+.main_section_heading {
+  color: #333333;
+  font-size: 18px;
+  font-weight: 700;
+}
+.main_section_subtitle {
+  margin: 30px 0 15px 0;
+  font-size: 15px;
+  color: #52575d;
+  font-weight: 600;
+}
+.image_circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50px;
+  background-color: #cccccc;
+  margin-top: 11px;
+  cursor: pointer;
+}
+
+.image_icon {
+  display: flex;
+  gap: 3px;
+}
+.image_clos_icon {
+  color: #808080;
+  font-size: 15px !important;
+  cursor: pointer;
+}
+.gallery_icon {
+  font-size: 38px !important;
+  color: #808080;
+  cursor: pointer;
+}
+.gallery_heading_subtitel {
+  margin-top: 39px;
+  margin-bottom: 15px;
+}
+
+/* clinic location section style */
+.clinic_location {
+  border-top: 2px solid #ebf2f7;
+  margin-top: 65px;
+}
+.clinic_location_subtitle {
+  margin: 27px 0;
+  font-size: 15px;
+  color: #52575d;
+  font-weight: 600;
+}
+.input_line {
+  display: flex;
+  gap: 23px;
+}
+.clinic_info {
+  margin: 20px 0 18px 0;
+  font-size: 15px;
+  color: #52575d;
+  font-weight: 600;
+}
+.clinic_input {
+  border: none;
+  background-color: #eeeeee;
+  height: 30px;
+  outline: none;
+  padding-left: 10px;
+  border-radius: 1px;
+  margin-bottom: 4px;
+
+  font-size: 14px;
+  color: #52575d;
+  font-weight: 600;
+}
+.name_input_width {
+  width: 220px;
+}
+.zip_input_width {
+  width: 100px;
+}
+.city_input_width {
+  width: 145px;
+}
+.clinic_fiture {
+  display: flex;
+  gap: 41px;
+  align-items: center;
+}
+.form-check-input {
+  margin-right: 13px;
+}
+.form-check-label {
+  font-size: 15px;
+  color: #52575d;
+  font-weight: 600;
+}
+.clinic_checkbox {
+  margin: 27px 0;
+  font-size: 15px;
+  color: #52575d;
+  font-weight: 600;
+}
+.form_button {
+  margin-left: 90px;
+  border: none;
+  background-color: #508ff4;
+  color: white;
+  border-radius: 3px;
+  font-size: 18px;
+  padding: 10px 27px;
+  cursor: pointer;
+}
+
+.checkbox_button {
+  display: flex;
+  align-items: center;
+}
+
+/* about section style */
+.about {
+  border-top: 2px solid #ebf2f7;
+  margin-top: 65px;
+}
+
+.about_heading {
+  color: #333333;
+  font-size: 18px;
+  font-weight: 700;
+}
+.about_text_editor {
+  height: 325px;
+  width: 703px;
+}
+
+/* image preview */
+.preview_input {
+  display: none;
+}
+.preview_button {
+  width: 68px;
+  height: 68px;
+  border-radius: 50px;
+  background-color: #cccccc;
+  margin-top: 11px;
+  cursor: pointer;
+  border: none;
+}
+.preview_image {
+  width: 68px;
+  height: 68px;
+  border-radius: 50px;
+}

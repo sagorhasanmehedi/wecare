@@ -1,0 +1,21 @@
+.mapbutton {
+  border: 1px solid #62b4f9;
+  background: none;
+  height: 21px;
+  width: 75px;
+  outline: none;
+  margin-left: 24px;
+  border-radius: 1px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #52575d;
+  font-weight: 600;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* gallery image preview */
+.gallery_image_button {
+  border: none;
+  background: none;
+}

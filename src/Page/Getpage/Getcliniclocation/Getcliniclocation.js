@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Getcliniclocation.css";
-import { useForm } from "react-hook-form";
+import axios from "axios";
 
 const Getcliniclocation = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const [clinicInfo, setClinicInfo] = useState([]);
+
+  // get clinic information form server
+  useEffect(() => {
+    axios
+      .get("http://localhost:7000/clinicinfo")
+      .then((response) => {
+        // handle success
+        setClinicInfo(response.data[0]);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+  }, []);
 
   return (
     <div className="clinic_location">
@@ -12,12 +25,13 @@ const Getcliniclocation = () => {
       <p className="clinic_location_subtitle">Location 1</p>
 
       {/* clinic location input */}
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form>
         <div>
           <p className="clinic_info">Clinic Name</p>
           <input
             className="clinic_input name_input_width"
-            {...register("Clinic_Name")}
+            defaultValue={clinicInfo?.name}
+            readOnly
           />
         </div>
         <div className="input_line">
@@ -25,14 +39,16 @@ const Getcliniclocation = () => {
             <p className="clinic_info">Address</p>
             <input
               className="clinic_input name_input_width"
-              {...register("Address")}
+              defaultValue={clinicInfo?.address}
+              readOnly
             />
           </div>
           <div>
             <p className="clinic_info">Address 2nd line</p>
             <input
               className="clinic_input name_input_width"
-              {...register("Address_2nd_line")}
+              defaultValue={clinicInfo?.address2}
+              readOnly
             />
           </div>
         </div>
@@ -41,7 +57,8 @@ const Getcliniclocation = () => {
             <p className="clinic_info">Zip_code</p>
             <input
               className="clinic_input zip_input_width"
-              {...register("Zip_code")}
+              defaultValue={clinicInfo?.zip}
+              readOnly
             />
           </div>
 
@@ -49,14 +66,16 @@ const Getcliniclocation = () => {
             <p className="clinic_info">City</p>
             <input
               className="clinic_input city_input_width"
-              {...register("City")}
+              defaultValue={clinicInfo?.city}
+              readOnly
             />
           </div>
           <div>
             <p className="clinic_info">Country</p>
             <input
               className="clinic_input city_input_width"
-              {...register("Country")}
+              defaultValue={clinicInfo?.country}
+              readOnly
             />
           </div>
         </div>
@@ -65,14 +84,16 @@ const Getcliniclocation = () => {
             <p className="clinic_info">Landline</p>
             <input
               className="clinic_input city_input_width"
-              {...register("Landline")}
+              defaultValue={clinicInfo?.landline}
+              readOnly
             />
           </div>
           <div>
             <p className="clinic_info">Second Landline</p>
             <input
               className="clinic_input city_input_width"
-              {...register("Second_Landline")}
+              defaultValue={clinicInfo?.landline2}
+              readOnly
             />
           </div>
         </div>
@@ -80,45 +101,46 @@ const Getcliniclocation = () => {
           <p className="clinic_info">Email</p>
           <input
             className="clinic_input name_input_width"
-            {...register("Email")}
+            defaultValue={clinicInfo?.email}
+            readOnly
           />
+          <input readOnly className="mapbutton" defaultValue={"Pin on map"} />
         </div>
-        {/* <input type="submit" /> */}
       </form>
 
       {/* clinic fiture checkbox */}
       <p className="clinic_checkbox">Clinic Features</p>
       <div className="clinic_fiture">
-        <div class="form-check">
+        <div className="form-check">
           <input
             type="checkbox"
-            class="form-check-input"
+            className="form-check-input"
             id="anime"
             name="hobby"
           />
-          <label class="form-check-label" for="anime">
+          <label className="form-check-label" htmlFor="anime">
             Disabled Access
           </label>
         </div>
-        <div class="form-check">
+        <div className="form-check">
           <input
             type="checkbox"
-            class="form-check-input"
+            className="form-check-input"
             id="anime"
             name="hobby"
           />
-          <label class="form-check-label" for="anime">
+          <label className="form-check-label" htmlFor="anime">
             Cash payments
           </label>
         </div>
-        <div class="form-check">
+        <div className="form-check">
           <input
             type="checkbox"
-            class="form-check-input"
+            className="form-check-input"
             id="anime"
             name="hobby"
           />
-          <label class="form-check-label" for="anime">
+          <label className="form-check-label" htmlFor="anime">
             Credit card payments
           </label>
         </div>

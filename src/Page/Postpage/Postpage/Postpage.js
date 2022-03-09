@@ -1,14 +1,18 @@
 import React from "react";
+import Navigation from "../../Shared/Navigation/Navigation";
 import Sidebar from "../../Shared/Sidebar/Sidebar";
-import Allsection from "../Allsection/Allsection";
+import Finalpostoage from "../Finalpostpage/Finalpostoage";
 import "./Postpage.css";
 
 const Postpage = () => {
   return (
-    <div className="post_page">
-      <Sidebar />
-      <Allsection />
-    </div>
+    <React.Fragment>
+      <Navigation />
+      <div className="post_page">
+        <Sidebar />
+        <Finalpostoage />
+      </div>
+    </React.Fragment>
   );
 };
 

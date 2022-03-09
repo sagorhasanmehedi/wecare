@@ -4,7 +4,6 @@ import RichTextEditor from "react-rte";
 
 const Getbout = (props) => {
   const [value, setValue] = useState(RichTextEditor.createEmptyValue());
-  console.log(value);
   const onChange = (value) => {
     setValue(value);
     if (props.onChange) {

@@ -4,7 +4,7 @@
   align-items: center;
   margin-bottom: 22px;
 }
-.nav_button {
+/* .nav_button {
   border: none;
   background-color: #508ff4;
   color: white;
@@ -12,7 +12,7 @@
   font-size: 24px;
   padding: 10px 27px;
   cursor: pointer;
-}
+} */
 .nav_icon_bar {
   display: flex;
   align-items: center;
@@ -26,5 +26,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+.navigation_logo {
+  width: 195px;
   cursor: pointer;
 }

@@ -1,4 +1,4 @@
-.clinic_location {
+/* .clinic_location {
   border-top: 2px solid #ebf2f7;
   margin-top: 65px;
 }
@@ -55,3 +55,18 @@
   color: #52575d;
   font-weight: 600;
 }
+.form_button {
+  margin-left: 90px;
+  border: none;
+  background-color: #508ff4;
+  color: white;
+  border-radius: 7px;
+  font-size: 18px;
+  padding: 10px 27px;
+  cursor: pointer;
+}
+
+.checkbox_button {
+  display: flex;
+  align-items: center;
+} */
