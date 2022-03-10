@@ -12,8 +12,8 @@ const Finalpostoage = (props) => {
   const [image, setImage] = useState();
   const [preview, setPreview] = useState();
 
-  // const [galleryPreview, setgalleryPreview] = useState();
   const [galleryImage, setGalleryImage] = useState();
+  const [galleryPreview, setgalleryPreview] = useState();
 
   // clinic infiormation
   const [name, setName] = useState("");
@@ -29,6 +29,7 @@ const Finalpostoage = (props) => {
   //   send data to database
   const handelData = () => {
     formdata.append("image", image);
+    formdata.append("gallery_image", galleryImage);
     formdata.append("clinic_name", name);
     formdata.append("address", address);
     formdata.append("address2", address2);
@@ -50,6 +51,7 @@ const Finalpostoage = (props) => {
       headers: { "Content-Type": "multipart/form-data" },
     })
       .then(function (res) {
+        console.log(res);
         if (res.data.acknowledged === true) {
           swal("Congratulation", "Your submission hass been sent", "success");
           return;
@@ -73,6 +75,7 @@ const Finalpostoage = (props) => {
   const imageref = useRef();
   const galleryImageRef = useRef();
 
+  // main image preview
   useEffect(() => {
     if (image) {
       const reader = new FileReader();
@@ -85,6 +88,19 @@ const Finalpostoage = (props) => {
     }
   }, [image]);
 
+  // gallery image preview
+  useEffect(() => {
+    if (galleryImage) {
+      const reader = new FileReader();
+      reader.readAsDataURL(galleryImage);
+      reader.onload = () => {
+        setgalleryPreview(reader.result);
+      };
+    } else {
+      setgalleryPreview(null);
+    }
+  }, [galleryImage]);
+
   // handel input image
   const handelInputImage = (e) => {
     const file = e.target.files[0];
@@ -95,17 +111,13 @@ const Finalpostoage = (props) => {
     }
   };
 
-  console.log(galleryImage);
-
-  const galleryImageInput = (e) => {
-    if (e.target.files) {
-      const imagearray = Array.from(e.target.files).map((files) =>
-        URL.createObjectURL(files)
-      );
-      setGalleryImage((prevImages) => prevImages.concat(imagearray));
-      Array.form(e.target.files).map((file) => URL.revokeObjectURL(file));
-
-      console.log(imagearray);
+  // handle gallery image
+  const handelgalleryImage = (e) => {
+    const file = e.target.files[0];
+    if (file && file.type.substr(0, 5) === "image") {
+      setGalleryImage(file);
+    } else {
+      setGalleryImage(null);
     }
   };
 
@@ -118,12 +130,6 @@ const Finalpostoage = (props) => {
   const handelGalleryPreview = (e) => {
     e.preventDefault();
     galleryImageRef.current.click();
-  };
-
-  const renderGalleryImage = (sourse) => {
-    return sourse?.map((image) => {
-      return <img src={image} alt="" srcset="" key={image} />;
-    });
   };
 
   return (
@@ -170,29 +176,39 @@ const Finalpostoage = (props) => {
           </p>
           <div className="image_icon">
             <form>
-              <button
-                onClick={handelGalleryPreview}
-                className="gallery_image_button"
-              >
-                <CollectionsOutlinedIcon className="gallery_icon" />
-              </button>
+              {galleryPreview ? (
+                <img
+                  className="gallery_image_preview"
+                  src={galleryPreview}
+                  alt=""
+                  srcset=""
+                  onClick={() => setGalleryImage(null)}
+                />
+              ) : (
+                <button
+                  onClick={handelGalleryPreview}
+                  className="gallery_image_button"
+                >
+                  <CollectionsOutlinedIcon className="gallery_icon" />
+                </button>
+              )}
               <input
                 className="preview_input"
                 type="file"
-                multiple
                 accept="image/*"
                 ref={galleryImageRef}
-                onChange={galleryImageInput}
+                onChange={handelgalleryImage}
               />
             </form>
-            {renderGalleryImage(galleryImage)}
           </div>
         </div>
       </div>
 
       {/* clinic location section */}
       <div className="clinic_location">
-        <h1 className="main_section_heading">Clinic Locations</h1>
+        <p className="main_section_heading clinic_location_heading">
+          Clinic Locations
+        </p>
         <p className="clinic_location_subtitle">Location 1</p>
 
         {/* clinic location input */}

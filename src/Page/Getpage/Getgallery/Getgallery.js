@@ -5,7 +5,7 @@ import CollectionsOutlinedIcon from "@mui/icons-material/CollectionsOutlined";
 import axios from "axios";
 
 const Getgallery = () => {
-  const [doctorImage, setDoctorImage] = useState();
+  const [Image, setImage] = useState();
 
   // get doctor image
   useEffect(() => {
@@ -13,13 +13,15 @@ const Getgallery = () => {
       .get("http://localhost:7000/clinicinfo")
       .then((res) => {
         // handle success
-        setDoctorImage(res.data[0].image);
+        setImage(res.data[0]);
       })
       .catch(function (error) {
         // handle error
         console.log(error);
       });
   }, []);
+
+  console.log(Image);
 
   return (
     <div className="gallery">
@@ -29,10 +31,10 @@ const Getgallery = () => {
 
         <div className="image_icon">
           <form>
-            {doctorImage ? (
+            {Image ? (
               <img
                 className="preview_image"
-                src={"data:image/jpeg;base64," + doctorImage}
+                src={"data:image/jpeg;base64," + Image?.image}
                 alt=""
                 srcSet=""
                 style={{ objectFit: "cover" }}
@@ -50,7 +52,22 @@ const Getgallery = () => {
           Gallery images
         </p>
         <div className="image_icon">
-          <CollectionsOutlinedIcon className="gallery_icon" />
+          <form>
+            {Image ? (
+              <img
+                className="gallery_image_preview"
+                src={"data:image/jpeg;base64," + Image?.gallery_image}
+                alt=""
+                srcset=""
+              />
+            ) : (
+              <button className="gallery_image_button">
+                <CollectionsOutlinedIcon className="gallery_icon" />
+              </button>
+            )}
+          </form>
+
+          {/* <CollectionsOutlinedIcon className="gallery_icon" /> */}
         </div>
       </div>
     </div>

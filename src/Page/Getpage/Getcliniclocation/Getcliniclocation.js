@@ -21,7 +21,9 @@ const Getcliniclocation = () => {
 
   return (
     <div className="clinic_location">
-      <h1 className="main_section_heading">Clinic Locations</h1>
+      <h1 className="main_section_heading clinic_location_heading">
+        Clinic Locations
+      </h1>
       <p className="clinic_location_subtitle">Location 1</p>
 
       {/* clinic location input */}

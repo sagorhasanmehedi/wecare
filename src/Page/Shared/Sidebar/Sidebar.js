@@ -2,7 +2,8 @@ import React from "react";
 import "./Sidebar.css";
 import GridViewIcon from "@mui/icons-material/GridView";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
-import PieChartOutlineIcon from "@mui/icons-material/PieChartOutline";
+import SportsBasketballIcon from "@mui/icons-material/SportsBasketball";
+import CenterFocusWeakIcon from "@mui/icons-material/CenterFocusWeak";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
@@ -38,8 +39,8 @@ const Sidebar = () => {
         <p className="doctor_name">Stephen Strange</p>
       </div>
       <div className="sidedar_menu">
-        <GridViewIcon className="sidebar_icon" />
-        <p onClick={handelHistory} className="sidedar_text">
+        <GridViewIcon className="sidebar_icon hover_efect" />
+        <p onClick={handelHistory} className="sidedar_text hover_efect">
           Dashbord
         </p>
       </div>
@@ -50,7 +51,8 @@ const Sidebar = () => {
         </p>
       </div>
       <div className="sidedar_menu menu_last">
-        <PieChartOutlineIcon />
+        <CenterFocusWeakIcon />
+
         <p className="sidedar_text menu_last" onClick={handelAlert}>
           Listing
         </p>
@@ -58,9 +60,9 @@ const Sidebar = () => {
       <p className="list_details menu_last" onClick={handelAlert}>
         Listing Details
       </p>
-      <div className="retrun_button">
-        <ExitToAppIcon className="sidebar_icon" />
-        <p onClick={handelBascHome} className="retrun_button_text">
+      <div className="retrun_button ">
+        <ExitToAppIcon className="sidebar_icon hover_efect sidebar_retrun_button" />
+        <p onClick={handelBascHome} className="retrun_button_text hover_efect ">
           Return to Doctors
         </p>
       </div>

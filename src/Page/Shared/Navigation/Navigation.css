@@ -2,17 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
-/* .nav_button {
-  border: none;
-  background-color: #508ff4;
-  color: white;
-  border-radius: 7px;
-  font-size: 24px;
-  padding: 10px 27px;
-  cursor: pointer;
-} */
+
 .nav_icon_bar {
   display: flex;
   align-items: center;
@@ -31,4 +23,5 @@
 .navigation_logo {
   width: 195px;
   cursor: pointer;
+  margin-left: 17px;
 }

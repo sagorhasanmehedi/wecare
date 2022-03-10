@@ -1,7 +1,6 @@
 /* main page style */
 .all_section {
-  width: 764px;
-  height: 1500px;
+  width: 767px;
   background-color: #fff;
   padding: 70px 50px;
 }
@@ -50,12 +49,16 @@
 }
 
 /* clinic location section style */
+.clinic_location_heading {
+  margin-top: 18px;
+}
+
 .clinic_location {
   border-top: 2px solid #ebf2f7;
-  margin-top: 65px;
+  margin-top: 45px;
 }
 .clinic_location_subtitle {
-  margin: 27px 0;
+  margin: 30px 0;
   font-size: 15px;
   color: #52575d;
   font-weight: 600;
@@ -65,7 +68,7 @@
   gap: 23px;
 }
 .clinic_info {
-  margin: 20px 0 18px 0;
+  margin: 20px 0 15px 0;
   font-size: 15px;
   color: #52575d;
   font-weight: 600;
@@ -160,4 +163,10 @@
   width: 68px;
   height: 68px;
   border-radius: 50px;
+}
+.gallery_image_preview {
+  width: 99px;
+  height: 99px;
+  object-fit: cover;
+  cursor: pointer;
 }
