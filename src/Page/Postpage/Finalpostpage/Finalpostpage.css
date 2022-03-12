@@ -124,10 +124,12 @@
   padding: 10px 27px;
   cursor: pointer;
 }
-
 .checkbox_button {
   display: flex;
   align-items: center;
+}
+.form_input {
+  display: none;
 }
 
 /* about section style */
@@ -168,5 +170,7 @@
   width: 99px;
   height: 99px;
   object-fit: cover;
-  cursor: pointer;
+}
+.gallery_image_icon {
+  cursor: auto;
 }

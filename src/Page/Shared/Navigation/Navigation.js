@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Navigation.css";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
+import logo from "../../../image/logo.png";
 
 const Navigation = () => {
   // handel alert popup
@@ -23,7 +24,7 @@ const Navigation = () => {
       <div className="navbar">
         <div>
           <img
-            src="http://ary-themes.com/html/bold_touch/medicoz/images/logo.png"
+            src={logo}
             alt=""
             srcSet=""
             className="navigation_logo"

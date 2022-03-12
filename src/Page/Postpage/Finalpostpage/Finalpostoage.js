@@ -40,13 +40,17 @@ const Finalpostoage = (props) => {
     formdata.append("landline2", landline2);
     formdata.append("email", email);
 
-    if (!image) {
-      swal("Warning", "Please select at least one image", "error");
+    if (!image || !galleryImage) {
+      swal(
+        "Warning",
+        "Please select main image and at least one gallery image",
+        "error"
+      );
       return;
     }
     axios({
       method: "post",
-      url: "http://localhost:7000/clinic",
+      url: "https://hidden-forest-55120.herokuapp.com/clinic",
       data: formdata,
       headers: { "Content-Type": "multipart/form-data" },
     })
@@ -61,6 +65,19 @@ const Finalpostoage = (props) => {
         swal("Error!", `${error}`, "error");
         return;
       });
+
+    setImage(null);
+    setGalleryImage(null);
+
+    document.getElementById("name").value = "";
+    document.getElementById("address").value = "";
+    document.getElementById("address2").value = "";
+    document.getElementById("zip").value = "";
+    document.getElementById("city").value = "";
+    document.getElementById("country").value = "";
+    document.getElementById("landline").value = "";
+    document.getElementById("landline2").value = "";
+    document.getElementById("email").value = "";
   };
 
   //   rich text editor
@@ -181,7 +198,7 @@ const Finalpostoage = (props) => {
                   className="gallery_image_preview"
                   src={galleryPreview}
                   alt=""
-                  srcset=""
+                  srcSet=""
                   onClick={() => setGalleryImage(null)}
                 />
               ) : (
@@ -216,17 +233,18 @@ const Finalpostoage = (props) => {
           <div>
             <p className="clinic_info">Clinic Name</p>
             <input
-              className="clinic_input name_input_width"
+              className="clinic_input name_input_width "
               onBlur={(e) => setName(e.target.value)}
-              required
+              id="name"
             />
           </div>
           <div className="input_line">
             <div>
               <p className="clinic_info">Address</p>
               <input
-                className="clinic_input name_input_width"
+                className="clinic_input name_input_width "
                 onBlur={(e) => setAddress(e.target.value)}
+                id="address"
               />
             </div>
             <div>
@@ -234,6 +252,7 @@ const Finalpostoage = (props) => {
               <input
                 className="clinic_input name_input_width"
                 onBlur={(e) => setAddress2(e.target.value)}
+                id="address2"
               />
             </div>
           </div>
@@ -243,6 +262,7 @@ const Finalpostoage = (props) => {
               <input
                 className="clinic_input zip_input_width"
                 onBlur={(e) => setZip(e.target.value)}
+                id="zip"
               />
             </div>
 
@@ -251,6 +271,7 @@ const Finalpostoage = (props) => {
               <input
                 className="clinic_input city_input_width"
                 onBlur={(e) => setCity(e.target.value)}
+                id="city"
               />
             </div>
             <div>
@@ -258,6 +279,7 @@ const Finalpostoage = (props) => {
               <input
                 className="clinic_input city_input_width"
                 onBlur={(e) => setCoutry(e.target.value)}
+                id="country"
               />
             </div>
           </div>
@@ -267,6 +289,7 @@ const Finalpostoage = (props) => {
               <input
                 className="clinic_input city_input_width"
                 onBlur={(e) => setLandline(e.target.value)}
+                id="landline"
               />
             </div>
             <div>
@@ -274,6 +297,7 @@ const Finalpostoage = (props) => {
               <input
                 className="clinic_input city_input_width"
                 onBlur={(e) => setLandline2(e.target.value)}
+                id="landline2"
               />
             </div>
           </div>
@@ -282,6 +306,7 @@ const Finalpostoage = (props) => {
             <input
               className="clinic_input name_input_width"
               onBlur={(e) => setEmail(e.target.value)}
+              id="email"
             />
           </div>
         </div>

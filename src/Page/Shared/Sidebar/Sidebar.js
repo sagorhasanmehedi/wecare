@@ -2,7 +2,6 @@ import React from "react";
 import "./Sidebar.css";
 import GridViewIcon from "@mui/icons-material/GridView";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
-import SportsBasketballIcon from "@mui/icons-material/SportsBasketball";
 import CenterFocusWeakIcon from "@mui/icons-material/CenterFocusWeak";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { useNavigate } from "react-router-dom";

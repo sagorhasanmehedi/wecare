@@ -8,7 +8,7 @@ const Getcliniclocation = () => {
   // get clinic information form server
   useEffect(() => {
     axios
-      .get("http://localhost:7000/clinicinfo")
+      .get("https://hidden-forest-55120.herokuapp.com/clinicinfo")
       .then((response) => {
         // handle success
         setClinicInfo(response.data[0]);

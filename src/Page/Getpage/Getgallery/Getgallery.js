@@ -10,7 +10,7 @@ const Getgallery = () => {
   // get doctor image
   useEffect(() => {
     axios
-      .get("http://localhost:7000/clinicinfo")
+      .get("https://hidden-forest-55120.herokuapp.com/clinicinfo")
       .then((res) => {
         // handle success
         setImage(res.data[0]);
@@ -40,11 +40,16 @@ const Getgallery = () => {
                 style={{ objectFit: "cover" }}
               />
             ) : (
-              <button className="preview_button"></button>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+                className="preview_button"
+              ></button>
             )}
           </form>
 
-          <CloseIcon className="image_clos_icon" />
+          <CloseIcon className="image_clos_icon gallery_image_icon" />
         </div>
       </div>
       <div className="image">
@@ -58,16 +63,19 @@ const Getgallery = () => {
                 className="gallery_image_preview"
                 src={"data:image/jpeg;base64," + Image?.gallery_image}
                 alt=""
-                srcset=""
+                srcSet=""
               />
             ) : (
-              <button className="gallery_image_button">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+                className="gallery_image_button"
+              >
                 <CollectionsOutlinedIcon className="gallery_icon" />
               </button>
             )}
           </form>
-
-          {/* <CollectionsOutlinedIcon className="gallery_icon" /> */}
         </div>
       </div>
     </div>
