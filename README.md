@@ -1,7 +1,7 @@
 # Wecare
 
 - Live Website [https://redpositive.netlify.app/](https://redpositive.netlify.app/)
-- Server side code [https://github.com/sagorhasanmehedi/redpositive-server](https://github.com/sagorhasanmehedi/redpositive-server)
+- Server side code [https://github.com/sagorhasanmehedi/wecare-new-server](https://github.com/sagorhasanmehedi/wecare-new-server)
 
 ## Technology
 
