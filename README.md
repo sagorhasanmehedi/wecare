@@ -1,6 +1,6 @@
 # Wecare
 
-- Live Website [https://redpositive.netlify.app/](https://wecare-67f6f.web.app/)
+- Live Website [https://wecare-67f6f.web.app/](https://wecare-67f6f.web.app/)
 - Server side code [https://github.com/sagorhasanmehedi/wecare-new-server](https://github.com/sagorhasanmehedi/wecare-new-server)
 
 ## Technology
